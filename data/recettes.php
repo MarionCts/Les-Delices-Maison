@@ -1,0 +1,78 @@
+<?php
+// data/recettes.php
+
+$recettes = [
+    [
+        'image' => './src/images/coquillettes-jambon-risotto.jpg',
+        'titre' => 'Spaghetti à la carbonara',
+        'temps' => '25 minutes',
+        'categorie' => 'Plat principal',
+        'glucides' => 45,
+        'protéines' => 27.3,
+        'graisses' => 25.4,
+        'difficulte' => 'Facile',
+        'ingredients' => [
+            '200g de spaghetti',
+            '100g de pancetta',
+            '2 œufs',
+            '50g de parmesan râpé',
+            'Poivre noir',
+            'Sel'
+        ]
+    ],
+    [
+        'image' => './src/images/poulet-citron.jpg',
+        'titre' => 'Poulet rôti au citron',
+        'temps' => '1 heure 15 minutes',
+        'categorie' => 'Plat principal',
+        'glucides' => 13.4,
+        'protéines' => 45.7,
+        'graisses' => 23.5,
+        'difficulte' => 'Moyen',
+        'ingredients' => [
+            '1 poulet entier',
+            '2 citrons',
+            '4 gousses d’ail',
+            'Herbes de Provence',
+            'Huile d’olive',
+            'Sel et poivre'
+        ]
+    ],
+    [
+        'image' => './src/images/tarte-pommes.jpg',
+        'titre' => 'Tarte aux pommes classique',
+        'temps' => '50 minutes',
+        'categorie' => 'Dessert',
+        'glucides' => 52,
+        'protéines' => 11.2,
+        'graisses' => 37.5,
+        'difficulte' => 'Facile',
+        'ingredients' => [
+            '1 pâte brisée',
+            '4 pommes',
+            '50g de sucre',
+            '20g de beurre',
+            'Cannelle (facultatif)'
+        ]
+    ],
+    [
+        'image' => './src/images/risotto-champignons.jpg',
+        'titre' => 'Risotto aux champignons',
+        'temps' => '40 minutes',
+        'categorie' => 'Plat principal',
+        'glucides' => 43.6,
+        'protéines' => 13.5,
+        'graisses' => 36.4,
+        'difficulte' => 'Difficile',
+        'ingredients' => [
+            '200g de riz arborio',
+            '150g de champignons de Paris',
+            '1 oignon',
+            '50cl de bouillon de légumes',
+            '30g de parmesan',
+            '20g de beurre',
+            'Huile d’olive',
+            'Sel et poivre'
+        ]
+    ]
+];

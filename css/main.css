@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.primary__title {
+  margin: 5rem;
+  font-family: "Playfair Display";
+  font-weight: 500;
+  font-size: 3.6rem;
+  text-transform: normal;
+  color: #294504;
+  letter-spacing: -0.4rem;
+  font-style: normal;
+  text-align: center;
+  line-height: 3.2rem;
+  transition: none;
+}
+.primary__title span {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-size: 4.8rem;
+  text-transform: normal;
+  color: #294504;
+  letter-spacing: -0.2rem;
+  font-style: italic;
+  text-align: center;
+  line-height: 3.2rem;
+  transition: none;
+  display: block;
+}
+
+p {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-transform: normal;
+  color: #294504;
+  letter-spacing: 0;
+  font-style: normal;
+  text-align: left;
+  line-height: normal;
+  transition: none;
+}
+
+.btn__primary {
+  color: #F6F5F4;
+  font-style: "Inter";
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  background-color: #397E40;
+  text-decoration: none;
+  padding: 1.2rem 4rem;
+  font-weight: 800;
+  text-align: center;
+  border-radius: 2.5rem;
+  transition: all 0.3s linear;
+}
+.btn__primary:hover {
+  background-color: #B1C03E;
+}
+
+.header__elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+header .main__logo {
+  height: 7rem;
+  margin-top: 4rem;
+}
+
+.main__menu {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.main__menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.main__menu ul li a {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: normal;
+  color: #294504;
+  letter-spacing: 0.08rem;
+  font-style: normal;
+  text-align: left;
+  line-height: normal;
+  transition: all 0.3s linear;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.main__menu ul li a:hover {
+  color: #7B7373;
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero__title h1 {
+  font-family: "Playfair Display";
+  font-weight: 500;
+  font-size: 6.2rem;
+  text-transform: normal;
+  color: #294504;
+  letter-spacing: -0.5rem;
+  font-style: normal;
+  text-align: center;
+  line-height: 6.8rem;
+  transition: none;
+}
+.hero__title .hero__title--italic {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-size: 9rem;
+  text-transform: normal;
+  color: #294504;
+  letter-spacing: -0.1rem;
+  font-style: italic;
+  text-align: center;
+  line-height: 6.8rem;
+  transition: none;
+  display: block;
+}
+.hero__title p {
+  margin: 3rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 70rem;
+  padding: 0 3rem;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+.about p {
+  text-align: justify;
+}
+.about a {
+  margin-top: 2rem;
+}
+
+.recipe {
+  margin: 13rem 0 5rem;
+  padding: 0 5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 13rem;
+  grid-column-gap: 5rem;
+}
+@media screen and (min-width: 1024px) {
+  .recipe {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.recipe li {
+  list-style: none;
+  width: 100%;
+}
+.recipe li .recipe__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 2.5rem;
+  border-radius: 2rem;
+  box-shadow: 0rem 2.8rem 2rem 0rem rgba(0, 0, 0, 0.12);
+  min-height: 54rem;
+}
+.recipe li .recipe__card img {
+  margin-top: -10rem;
+  overflow: hidden;
+  height: 22.7rem;
+  width: auto;
+  border-radius: 50%;
+  box-shadow: 0rem 1rem 2rem 0rem rgba(0, 0, 0, 0.18);
+}
+.recipe li .recipe__card .recipe__card__title h3 {
+  font-family: "Playfair Display";
+  font-weight: 800;
+  font-size: 2.4rem;
+  text-transform: normal;
+  color: #294504;
+  letter-spacing: 0;
+  font-style: normal;
+  text-align: center;
+  line-height: 2.3rem;
+  transition: none;
+  margin-bottom: 0.8rem;
+}
+.recipe li .recipe__card .recipe__card__title h4 {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #7B7373;
+  letter-spacing: 0;
+  font-style: normal;
+  text-align: center;
+  line-height: normal;
+  transition: none;
+}
+.recipe li .recipe__card .recipe__card__indications p {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-transform: normal;
+  color: #7B7373;
+  letter-spacing: 0;
+  font-style: normal;
+  text-align: center;
+  line-height: normal;
+  transition: none;
+}
+.recipe li .recipe__card .recipe__card__indications .recipe__card__indications--bold {
+  font-weight: 700;
+}
+.recipe li .recipe__card .recipe__card__macros {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.recipe li .recipe__card .recipe__card__macros svg {
+  fill: #294504;
+  height: 3.5rem;
+}
+.recipe li .recipe__card .recipe__card__macros h5 {
+  font-family: "Playfair Display";
+  font-weight: 800;
+  font-size: 1.6rem;
+  text-transform: normal;
+  color: #294504;
+  letter-spacing: 0;
+  font-style: normal;
+  text-align: center;
+  line-height: normal;
+  transition: none;
+}
+.recipe li .recipe__card .recipe__card__macros p {
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: #7B7373;
+  letter-spacing: 0;
+  font-style: normal;
+  text-align: center;
+  line-height: normal;
+  transition: none;
+}
+.recipe li .recipe__card a {
+  width: 100%;
+  padding: 1.5rem;
+}
+
+.footer {
+  margin-bottom: 5rem;
+}
+.footer p {
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #294504;
+  letter-spacing: 0.1rem;
+  font-style: normal;
+  text-align: center;
+  line-height: normal;
+  transition: none;
+}/*# sourceMappingURL=main.css.map */
