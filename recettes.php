@@ -12,7 +12,7 @@ include 'includes/menu.php';
 <main>
     <h2 class="primary__title">Liste des <span>Recettes</span></h2>
     <ul class="recipe">
-        <?php foreach($recettes as $recette): ?>
+        <?php foreach($recettes as $index => $recette): ?>
             <li>
                 <div class="recipe__card">
                     <img src="<?php echo htmlspecialchars($recette['image']); ?>" alt="image de la recette">
@@ -41,7 +41,7 @@ include 'includes/menu.php';
                             <p><?php echo htmlspecialchars($recette['graisses']); ?> g</p>
                         </div>
                     </div>
-                    <a href="#" class="btn__primary">Voir la recette</a>
+                    <a href="recette.php?id=<?= $index ?>" class="btn__primary">Voir la recette</a>
                 </div>
             </li>
         <?php endforeach; ?>

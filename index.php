@@ -5,7 +5,7 @@ include 'includes/menu.php';
 
 ?>
 
-<main>
+<main class="index__bg">
     <div class="hero__title">
         <h1>Les Délices <span class="hero__title--italic">Maison</span></h1>
         <p>Des recettes saines et équilibrées qui ravissent les papilles !</p>

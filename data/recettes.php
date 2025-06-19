@@ -18,6 +18,11 @@ $recettes = [
             '50g de parmesan râpé',
             'Poivre noir',
             'Sel'
+        ],
+        'instructions' => [
+            "Rôtir le poulet pendant une heure au four avec un peu d'huile d'olive, de jus de citron, de thym et de romarin. Mouiller le poulet de ce jus de manière régulière pendant la cuisson.",
+            "Faire cuire les pommes de terre à la vapeur avec la peau. Une fois cuites, les couper en rondelles et les badigeonner d'huile d'olive, de sel et d'herbes de provence.",
+            "Détailler le poulet en morceaux, et dresser dans une assiette avec les pommes de terre.",
         ]
     ],
     [
@@ -36,6 +41,11 @@ $recettes = [
             'Herbes de Provence',
             'Huile d’olive',
             'Sel et poivre'
+        ],
+        'instructions' => [
+            "Rôtir le poulet pendant une heure au four avec un peu d'huile d'olive, de jus de citron, de thym et de romarin. Mouiller le poulet de ce jus de manière régulière pendant la cuisson.",
+            "Faire cuire les pommes de terre à la vapeur avec la peau. Une fois cuites, les couper en rondelles et les badigeonner d'huile d'olive, de sel et d'herbes de provence.",
+            "Détailler le poulet en morceaux, et dresser dans une assiette avec les pommes de terre.",
         ]
     ],
     [
@@ -53,6 +63,11 @@ $recettes = [
             '50g de sucre',
             '20g de beurre',
             'Cannelle (facultatif)'
+        ],
+        'instructions' => [
+            "Rôtir le poulet pendant une heure au four avec un peu d'huile d'olive, de jus de citron, de thym et de romarin. Mouiller le poulet de ce jus de manière régulière pendant la cuisson.",
+            "Faire cuire les pommes de terre à la vapeur avec la peau. Une fois cuites, les couper en rondelles et les badigeonner d'huile d'olive, de sel et d'herbes de provence.",
+            "Détailler le poulet en morceaux, et dresser dans une assiette avec les pommes de terre.",
         ]
     ],
     [
@@ -73,6 +88,11 @@ $recettes = [
             '20g de beurre',
             'Huile d’olive',
             'Sel et poivre'
+        ],
+        'instructions' => [
+            "Rôtir le poulet pendant une heure au four avec un peu d'huile d'olive, de jus de citron, de thym et de romarin. Mouiller le poulet de ce jus de manière régulière pendant la cuisson.",
+            "Faire cuire les pommes de terre à la vapeur avec la peau. Une fois cuites, les couper en rondelles et les badigeonner d'huile d'olive, de sel et d'herbes de provence.",
+            "Détailler le poulet en morceaux, et dresser dans une assiette avec les pommes de terre.",
         ]
     ]
 ];

@@ -19,36 +19,36 @@ body {
 
 .primary__title {
   margin: 5rem;
-  font-family: "Playfair Display";
+  font-family: "Playfair Display", serif;
   font-weight: 500;
   font-size: 3.6rem;
-  text-transform: normal;
+  text-transform: none;
   color: #294504;
   letter-spacing: -0.4rem;
   font-style: normal;
   text-align: center;
-  line-height: 3.2rem;
+  line-height: 3.5rem;
   transition: none;
 }
 .primary__title span {
-  font-family: "Playfair Display";
+  font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 4.8rem;
-  text-transform: normal;
+  text-transform: none;
   color: #294504;
   letter-spacing: -0.2rem;
   font-style: italic;
   text-align: center;
-  line-height: 3.2rem;
+  line-height: 3.5rem;
   transition: none;
   display: block;
 }
 
 p {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-weight: 600;
-  font-size: 1.4rem;
-  text-transform: normal;
+  font-size: 1.6rem;
+  text-transform: none;
   color: #294504;
   letter-spacing: 0;
   font-style: normal;
@@ -109,10 +109,10 @@ header .main__logo {
   list-style: none;
 }
 .main__menu ul li a {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
-  text-transform: normal;
+  text-transform: none;
   color: #294504;
   letter-spacing: 0.08rem;
   font-style: normal;
@@ -126,6 +126,18 @@ header .main__logo {
   color: #7B7373;
 }
 
+.index__bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+  z-index: -1;
+  background: url("../src/images/leaves-background.jpg") center/cover;
+}
+
 .hero__title {
   display: flex;
   flex-direction: column;
@@ -133,10 +145,10 @@ header .main__logo {
   align-items: center;
 }
 .hero__title h1 {
-  font-family: "Playfair Display";
+  font-family: "Playfair Display", serif;
   font-weight: 500;
   font-size: 6.2rem;
-  text-transform: normal;
+  text-transform: none;
   color: #294504;
   letter-spacing: -0.5rem;
   font-style: normal;
@@ -145,10 +157,10 @@ header .main__logo {
   transition: none;
 }
 .hero__title .hero__title--italic {
-  font-family: "Playfair Display";
+  font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 9rem;
-  text-transform: normal;
+  text-transform: none;
   color: #294504;
   letter-spacing: -0.1rem;
   font-style: italic;
@@ -166,13 +178,19 @@ header .main__logo {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 70rem;
   padding: 0 3rem;
   gap: 2rem;
   margin-bottom: 5rem;
 }
+@media screen and (min-width: 1024px) {
+  .about {
+    padding: 0 10%;
+  }
+}
 .about p {
   text-align: justify;
+  font-size: 2.2rem;
+  font-weight: 500;
 }
 .about a {
   margin-top: 2rem;
@@ -196,7 +214,8 @@ header .main__logo {
   list-style: none;
   width: 100%;
 }
-.recipe li .recipe__card {
+
+.recipe__card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -207,7 +226,7 @@ header .main__logo {
   box-shadow: 0rem 2.8rem 2rem 0rem rgba(0, 0, 0, 0.12);
   min-height: 54rem;
 }
-.recipe li .recipe__card img {
+.recipe__card img {
   margin-top: -10rem;
   overflow: hidden;
   height: 22.7rem;
@@ -215,11 +234,11 @@ header .main__logo {
   border-radius: 50%;
   box-shadow: 0rem 1rem 2rem 0rem rgba(0, 0, 0, 0.18);
 }
-.recipe li .recipe__card .recipe__card__title h3 {
-  font-family: "Playfair Display";
+.recipe__card h3 {
+  font-family: "Playfair Display", serif;
   font-weight: 800;
   font-size: 2.4rem;
-  text-transform: normal;
+  text-transform: none;
   color: #294504;
   letter-spacing: 0;
   font-style: normal;
@@ -228,8 +247,8 @@ header .main__logo {
   transition: none;
   margin-bottom: 0.8rem;
 }
-.recipe li .recipe__card .recipe__card__title h4 {
-  font-family: "Inter";
+.recipe__card h4 {
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 1.3rem;
   text-transform: uppercase;
@@ -240,37 +259,11 @@ header .main__logo {
   line-height: normal;
   transition: none;
 }
-.recipe li .recipe__card .recipe__card__indications p {
-  font-family: "Inter";
-  font-weight: 500;
-  font-size: 1.3rem;
-  text-transform: normal;
-  color: #7B7373;
-  letter-spacing: 0;
-  font-style: normal;
-  text-align: center;
-  line-height: normal;
-  transition: none;
-}
-.recipe li .recipe__card .recipe__card__indications .recipe__card__indications--bold {
-  font-weight: 700;
-}
-.recipe li .recipe__card .recipe__card__macros {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.recipe li .recipe__card .recipe__card__macros svg {
-  fill: #294504;
-  height: 3.5rem;
-}
-.recipe li .recipe__card .recipe__card__macros h5 {
-  font-family: "Playfair Display";
+.recipe__card h5 {
+  font-family: "Playfair Display", serif;
   font-weight: 800;
   font-size: 1.6rem;
-  text-transform: normal;
+  text-transform: none;
   color: #294504;
   letter-spacing: 0;
   font-style: normal;
@@ -278,8 +271,35 @@ header .main__logo {
   line-height: normal;
   transition: none;
 }
-.recipe li .recipe__card .recipe__card__macros p {
-  font-family: "Inter";
+.recipe__card p {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-transform: none;
+  color: #7B7373;
+  letter-spacing: 0;
+  font-style: normal;
+  text-align: center;
+  line-height: normal;
+  transition: none;
+}
+.recipe__card .recipe__card__indications--bold {
+  font-weight: 700;
+}
+
+.recipe__card__macros {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.recipe__card__macros svg {
+  fill: #294504;
+  height: 3.5rem;
+}
+.recipe__card__macros p {
+  font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 1rem;
   text-transform: uppercase;
@@ -290,16 +310,84 @@ header .main__logo {
   line-height: normal;
   transition: none;
 }
-.recipe li .recipe__card a {
+.recipe__card__macros a {
   width: 100%;
   padding: 1.5rem;
+}
+
+.individual__recipe {
+  margin: 13rem 0 5rem;
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 1024px) {
+  .individual__recipe {
+    max-width: 70%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .individual__recipe .recipe__card {
+    padding: 8rem;
+  }
+}
+.individual__recipe h5 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+@media screen and (min-width: 1024px) {
+  .individual__recipe h5 {
+    text-align: left;
+  }
+}
+.individual__recipe li {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-transform: none;
+  color: #7B7373;
+  letter-spacing: 0;
+  font-style: normal;
+  text-align: center;
+  line-height: normal;
+  transition: none;
+}
+@media screen and (min-width: 1024px) {
+  .individual__recipe li {
+    text-align: left;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .individual__recipe .recipe__card__macros {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+}
+
+.recipe__card__ingredients {
+  margin: 0;
+  width: 100%;
+}
+
+.recipe__card__instructions ol li {
+  text-align: left;
+  list-style: decimal;
+  margin-left: 2rem;
+  padding: 0.5rem 1rem;
+}
+.recipe__card__instructions ol li::marker {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #294504;
+  font-weight: 600;
 }
 
 .footer {
   margin-bottom: 5rem;
 }
 .footer p {
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 1.1rem;
   text-transform: uppercase;
