@@ -11,5 +11,5 @@
 <body>
 <header>
     <div class="header__elements">
-        <img src="./src/images/logo-default.svg" class="main__logo" alt="Logo du site Les Délices Maison">
+        <a href="index.php"><img src="./src/images/logo-default.svg" class="main__logo" alt="Logo du site Les Délices Maison"></a>
     

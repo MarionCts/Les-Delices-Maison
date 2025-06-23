@@ -12,10 +12,12 @@
 
 $flex-presets: (
     column-center: (flex, column, center, center),
+    column-start: (flex, column, flex-start, flex-start),
     column-center-start: (flex, column, flex-start, center),
-    column-center-end: (flex, column, flex-end, center),
+    column-start-end: (flex, column, flex-start, flex-end),
     column-sb: (flex, column, space-between, center),
     row-center: (flex, row, center, center),
+    row-start: (flex, row, center, flex-start),
     row-sb: (flex, row, space-between, center),
 );
 
@@ -43,7 +45,8 @@ $grid-presets: (
 // BUTTON PRESETS
 
 $button-presets: (
-    primary-button: (variables.$cream, 'Inter', 1.2rem, uppercase, 0.05rem, variables.$leaf, none, 1.2rem 4rem, 800, center, 2.5rem, all 0.3s linear),
+    primary-button: (variables.$cream, 'Inter', 1.2rem, uppercase, 0.05rem, variables.$leaf, none, 1.2rem 4rem, 800, center, 2.5rem, all 0.3s linear, none),
+    filter-button: (variables.$tea, 'Inter', 1.2rem, uppercase, 0.05rem, transparent, none, 1.2rem 4rem, 800, center, 2.5rem, all 0.3s linear, 0.1rem solid variables.$tea),
 );
 
 @mixin button-preset($preset) {
@@ -60,10 +63,12 @@ $button-presets: (
   text-align: nth($settings, 10);
   border-radius: nth($settings, 11);
   transition: nth($settings, 12);
+  border: nth($settings, 13);
 }
 
 $button-hover-presets: (
     primary-button: (variables.$grass),
+    filter-button: (variables.$grass),
 );
 
 @mixin button-hover-preset($preset) {

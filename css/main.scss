@@ -18,6 +18,7 @@ html {
 
 body {
   @include mixins.flex-preset(column-sb);
+  position: relative;
   min-height: 100vh;
 }
 
@@ -31,8 +32,18 @@ body {
   }
 }
 
+.slogan {
+  @include mixins.text-preset(description);
+  font-size: 2rem;
+  text-align: center;
+}
+
 p {
   @include mixins.text-preset(paragraph);
+}
+
+.active {
+  color: variables.$grass!important;
 }
 
 // BUTTONS
@@ -42,6 +53,14 @@ p {
 
   &:hover {
     @include mixins.button-hover-preset(primary-button);
+  }
+}
+
+.filter__button {
+  @include mixins.button-preset(filter-button);
+
+  &:hover {
+    @include mixins.button-hover-preset(filter-button);
   }
 }
 
@@ -87,8 +106,18 @@ header {
 
 // HERO SECTION
 
+.index__bg {
+  .recipe__card {
+    margin: 12rem 0 3rem;
+    min-height: 0;
+    height: auto;
+    box-shadow: none;
+  }
+}
+
 .index__bg::before {
   content: "";
+  height: inherit;
   position: absolute;
   top: 0;
   left: 0;
@@ -101,18 +130,16 @@ header {
 
 .hero__title {
   @include mixins.flex-preset(column-center);
+  margin: 5rem 0;
 
   h1 {
     @include mixins.text-preset(normal-h1);
+    margin-bottom: 5rem;
   }
 
   .hero__title--italic {
     @include mixins.text-preset(italic-h1);
     display: block;
-  }
-
-  p {
-    margin: 3rem;
   }
 }
 
@@ -130,7 +157,7 @@ header {
 
   p {
     text-align: justify;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 500;
   }
 
@@ -139,15 +166,86 @@ header {
   }
 }
 
+// TIPS
+
+.tips__container {
+  margin: 5rem 3rem;
+  @include mixins.grid-preset(grid-center);
+  row-gap: 3rem;
+
+  @include mixins.media-min(1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    margin: 5rem;
+    column-gap: 3rem;
+  }
+
+  .tips__content {
+    border-radius: 2.5rem;
+    padding: 3rem;
+    position: relative;
+
+    &::after {
+      content: "";
+      background-color: variables.$grass;
+      opacity: 0.1;
+      border-radius: 2rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    h4 {
+      @include mixins.text-preset(h3);
+      text-align: left;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
 // RECIPE CARDS
 
-.recipe {
+.filter__selection {
+  @include mixins.flex-preset(column-center);
+  gap: 2rem;
+  padding: 2rem 5rem 0;
+  @include mixins.media-min(1024px) {
+    @include mixins.flex-preset(row-center);
+  }
+
+  li {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    @include mixins.media-min(1024px) {
+      width: auto;
+    }
+
+    a {
+      width: 100%;
+    }
+  }
+}
+
+.recipe__container {
+  @include mixins.flex-preset(column-center);
   margin: 13rem 0 5rem;
   padding: 0 5rem;
-  @include mixins.grid-preset(grid-center);
-  grid-row-gap: 13rem;
-  grid-column-gap: 5rem;
+}
 
+.recipe__category {
+  @include mixins.text-preset(h3);
+  font-size: 2.8rem;
+  margin-top: 5rem;
+}
+
+.recipe {
+  @include mixins.grid-preset(grid-center);
+  column-gap: 3rem;
+  row-gap: 13rem;
+  flex-wrap: wrap;
   @include mixins.media-min(1024px) {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -156,6 +254,9 @@ header {
 .recipe li {
   list-style: none;
   width: 100%;
+  @include mixins.media-min(1024px) {
+    width: 36.5rem;
+  }
 }
 
 .recipe__card {
@@ -219,11 +320,32 @@ header {
 // INDIVIDUAL RECIPE PAGES
 
 .individual__recipe {
-  margin: 13rem 0 5rem;
+  margin: 3rem;
   grid-template-columns: 1fr;
 
   @include mixins.media-min(1024px) {
-    max-width: 70%;
+    width: 60%;
+  }
+
+  .recipe__individual__image {
+    height: 30rem;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+
+    @include mixins.media-min(1024px) {
+    height: 30rem;
+  }
+    
+
+    img {
+      overflow: visible;
+      margin-top: 0;
+      border-radius: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .recipe__card {
@@ -237,17 +359,17 @@ header {
     font-size: 2rem;
 
     @include mixins.media-min(1024px) {
-    text-align: left;
-  }
-    
+      text-align: left;
+    }
   }
 
   li {
     @include mixins.text-preset(description);
-    
+    width: auto;
+
     @include mixins.media-min(1024px) {
-    text-align: left;
-  }
+      text-align: left;
+    }
   }
 
   .recipe__card__macros {
@@ -260,25 +382,55 @@ header {
 
 .recipe__card__ingredients {
   margin: 0;
-  width: 100%;
+  @include mixins.flex-preset(column-center);
+  @include mixins.media-min(1024px) {
+    width: 40%;
+    padding-right: 3rem;
+    @include mixins.flex-preset(column-start);
+  }
+
+  ul {
+    li {
+      list-style: circle;
+      text-align: left;
+
+      &::marker {
+        font-size: 2rem;
+        color: variables.$tea;
+      }
+    }
+  }
+}
+
+.ingredients__instructions__container {
+  @include mixins.media-min(1024px) {
+    @include mixins.flex-preset(row-start);
+  }
 }
 
 .recipe__card__instructions {
+  margin-top: 3rem;
+  @include mixins.media-min(1024px) {
+    margin-top: 0;
+    padding-left: 3rem;
+    border-left: 0.1rem solid variables.$leaf;
+  }
+  width: 100%;
   ol {
-
     li {
       text-align: left;
-    list-style: decimal;
-    margin-left: 2rem;
-    padding: 0.5rem 1rem;
+      list-style: decimal;
+      margin-left: 2rem;
+      padding: 0.5rem 1rem;
+      width: 100%;
 
-    &::marker {
-      font-family: "Playfair Display", serif;
-      font-size: 2rem;
-      color: variables.$tea;
-      font-weight: 600;
+      &::marker {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: variables.$tea;
+        font-weight: 600;
+      }
     }
-  }
   }
 }
 

@@ -9,9 +9,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     } else {
         $erreur = "Recette introuvable.";
     }
-} else {
-    $erreur = "ID invalide.";
-}
+};
 ?>
 
 <?php
@@ -24,7 +22,9 @@ include 'includes/menu.php';
 <main class="recipe individual__recipe">
     <?php if (isset($recette)): ?>
         <div class="recipe__card">
-            <img src="<?php echo htmlspecialchars($recette['image']); ?>" alt="image de la recette">
+            <div class="recipe__individual__image">
+                <img src="<?php echo htmlspecialchars($recette['image']); ?>" alt="image de la recette">
+            </div>
             <div class="recipe__card__title">
                 <h3><?php echo htmlspecialchars($recette['titre']); ?></h3>
                 <h4><?php echo htmlspecialchars($recette['categorie']); ?></h4>
@@ -59,29 +59,31 @@ include 'includes/menu.php';
                     <p><?php echo htmlspecialchars($recette['graisses']); ?> g</p>
                 </div>
             </div>
-            <div class="recipe__card__ingredients">
-                <h5>Ingrédients :</h5>
-                <?php foreach ($recette as $key => $value): ?>
-                    <?php if ($key === 'ingredients'): ?>
-                        <?php foreach ($value as $ingredient): ?>
-                            <ul>
-                                <li><?php echo htmlspecialchars($ingredient); ?></li>
-                            </ul>
+            <div class="ingredients__instructions__container">
+                <div class="recipe__card__ingredients">
+                    <h5>Ingrédients :</h5>
+                    <ul>
+                        <?php foreach ($recette as $key => $value): ?>
+                            <?php if ($key === 'ingredients'): ?>
+                                <?php foreach ($value as $ingredient): ?>
+                                    <li><?php echo htmlspecialchars($ingredient); ?></li>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
                         <?php endforeach; ?>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            </div>
-            <div class="recipe__card__instructions">
-                <h5>Étapes :</h5>
-                <ol>
-                    <?php foreach ($recette as $key => $value): ?>
-                        <?php if ($key === 'instructions'): ?>
-                            <?php foreach ($value as $instruction): ?>
-                                <li><?php echo htmlspecialchars($instruction); ?></li>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                    <?php endforeach; ?>
-                </ol>
+                    </ul>
+                </div>
+                <div class="recipe__card__instructions">
+                    <h5>Étapes :</h5>
+                    <ol>
+                        <?php foreach ($recette as $key => $value): ?>
+                            <?php if ($key === 'instructions'): ?>
+                                <?php foreach ($value as $instruction): ?>
+                                    <li><?php echo htmlspecialchars($instruction); ?></li>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </ol>
+                </div>
             </div>
             <a href="recettes.php" class="btn__primary">Retour aux recettes</a>
         </div>

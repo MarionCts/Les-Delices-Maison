@@ -3,10 +3,11 @@
 
 $recettes = [
     [
-        'image' => './src/images/coquillettes-jambon-risotto.jpg',
+        'miniature' => './src/images/coquillettes-jambon-risotto.jpg',
+        'image' => './src/images/carbonara.avif',
         'titre' => 'Spaghetti à la carbonara',
         'temps' => '25 minutes',
-        'categorie' => 'Plat principal',
+        'categorie' => 'Plat',
         'glucides' => 45,
         'protéines' => 27.3,
         'graisses' => 25.4,
@@ -26,10 +27,11 @@ $recettes = [
         ]
     ],
     [
-        'image' => './src/images/poulet-citron.jpg',
+        'miniature' => './src/images/poulet-citron.jpg',
+        'image' => './src/images/poulet.webp',
         'titre' => 'Poulet rôti au citron',
         'temps' => '1 heure 15 minutes',
-        'categorie' => 'Plat principal',
+        'categorie' => 'Plat',
         'glucides' => 13.4,
         'protéines' => 45.7,
         'graisses' => 23.5,
@@ -49,7 +51,8 @@ $recettes = [
         ]
     ],
     [
-        'image' => './src/images/tarte-pommes.jpg',
+        'miniature' => './src/images/tarte-pommes.jpg',
+        'image' => './src/images/pomme.jpg',
         'titre' => 'Tarte aux pommes classique',
         'temps' => '50 minutes',
         'categorie' => 'Dessert',
@@ -71,10 +74,11 @@ $recettes = [
         ]
     ],
     [
-        'image' => './src/images/risotto-champignons.jpg',
+        'miniature' => './src/images/risotto-champignons.jpg',
+        'image' => './src/images/risotto.jpeg',
         'titre' => 'Risotto aux champignons',
         'temps' => '40 minutes',
-        'categorie' => 'Plat principal',
+        'categorie' => 'Entrée',
         'glucides' => 43.6,
         'protéines' => 13.5,
         'graisses' => 36.4,
