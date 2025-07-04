@@ -1,0 +1,119 @@
+@use "variables";
+
+// MEDIA QUERIES
+
+@mixin media-min($_min-width) {
+  @media screen and (min-width: $_min-width) {
+    &{ @content; }
+  }
+}
+
+// FLEX PRESETS
+
+$flex-presets: (
+    column-center: (flex, column, center, center),
+    column-start: (flex, column, flex-start, flex-start),
+    column-center-start: (flex, column, flex-start, center),
+    column-start-end: (flex, column, flex-start, flex-end),
+    column-sb: (flex, column, space-between, center),
+    row-center: (flex, row, center, center),
+    row-start: (flex, row, center, flex-start),
+    row-sb: (flex, row, space-between, center),
+);
+
+@mixin flex-preset($preset) {
+  $settings: map-get($flex-presets, $preset);
+  display: nth($settings, 1);
+  flex-direction: nth($settings, 2);
+  justify-content: nth($settings, 3);
+  align-items: nth($settings, 4);
+}
+
+// GRID PRESETS
+
+$grid-presets: (
+    grid-center: (grid, 1fr),
+);
+
+@mixin grid-preset($preset) {
+  $settings: map-get($grid-presets, $preset);
+  display: nth($settings, 1);
+  grid-template-columns: nth($settings, 2);
+}
+
+
+// BUTTON PRESETS
+
+$button-presets: (
+    primary-button: (variables.$cream, 'Inter', 1.2rem, uppercase, 0.05rem, variables.$leaf, none, 1.2rem 4rem, 800, center, 2.5rem, all 0.3s linear, none),
+    filter-button: (variables.$tea, 'Inter', 1.2rem, uppercase, 0.05rem, transparent, none, 1.2rem 4rem, 800, center, 2.5rem, all 0.3s linear, 0.1rem solid variables.$tea),
+);
+
+@mixin button-preset($preset) {
+  $settings: map-get($button-presets, $preset);
+  color: nth($settings, 1);
+  font-style: nth($settings, 2);
+  font-size: nth($settings, 3);
+  text-transform: nth($settings, 4);
+  letter-spacing: nth($settings, 5);
+  background-color: nth($settings, 6);
+  text-decoration: nth($settings, 7);
+  padding: nth($settings, 8);
+  font-weight: nth($settings, 9);
+  text-align: nth($settings, 10);
+  border-radius: nth($settings, 11);
+  transition: nth($settings, 12);
+  border: nth($settings, 13);
+}
+
+$button-hover-presets: (
+    primary-button: (variables.$grass),
+    filter-button: (variables.$grass),
+);
+
+@mixin button-hover-preset($preset) {
+  $settings: map-get($button-hover-presets, $preset);
+  background-color: nth($settings, 1);
+}
+
+// TEXT PRESETS
+
+$text-presets: (
+  normal-h1: ("Playfair Display", 500, 6.2rem, none, variables.$tea, -0.5rem, normal, center, 6.8rem, none, serif),
+  italic-h1: ("Playfair Display", 700, 9rem, none, variables.$tea, -0.1rem, italic, center, 6.8rem, none, serif),
+  normal-h2: ("Playfair Display", 500, 3.6rem, none, variables.$tea, -0.4rem, normal, center, 3.5rem, none, serif),
+  italic-h2: ("Playfair Display", 700, 4.8rem, none, variables.$tea, -0.2rem, italic, center, 3.5rem, none, serif),
+  h3: ("Playfair Display", 800, 2.4rem, none, variables.$tea, 0, normal, center, 2.3rem, none, serif),
+  h4: ("Playfair Display", 800, 1.6rem, none, variables.$tea, 0, normal, center, normal, none, serif),
+  menu-links: ("Inter", 700, 1.2rem, none, variables.$tea, 0.08rem, normal, left, normal, all 0.3s linear, sans-serif),
+  paragraph: ("Inter", 600, 1.6rem, none, variables.$tea, 0, normal, left, normal, none, sans-serif),
+  category: ("Inter", 600, 1.3rem, uppercase, variables.$stone, 0, normal, center, normal, none, sans-serif),
+  description: ("Inter", 500, 1.3rem, none, variables.$stone, 0, normal, center, normal, none, sans-serif),
+  details: ("Inter", 500, 1rem, uppercase, variables.$stone, 0, normal, center, normal, none, sans-serif),
+  footer-text: ("Inter", 600, 1.1rem, uppercase, variables.$tea, 0.1rem, normal, center, normal, none, sans-serif),
+);
+
+@mixin text-preset($preset) {
+  $settings: map-get($text-presets, $preset);
+  font-family: nth($settings, 1), nth($settings, 11);
+  font-weight: nth($settings, 2);
+  font-size: nth($settings, 3);
+  text-transform: nth($settings, 4);
+  color: nth($settings, 5);
+  letter-spacing: nth($settings, 6);
+  font-style: nth($settings, 7);
+  text-align: nth($settings, 8);
+  line-height: nth($settings, 9);
+  transition: nth($settings, 10);
+}
+
+// HOVER PRESETS
+
+$hover-text-presets: (
+  hover-menu-links: (variables.$stone),
+);
+
+@mixin hover-text-preset($preset) {
+  $settings: map-get($hover-text-presets, $preset);
+  color: nth($settings, 1);
+}
