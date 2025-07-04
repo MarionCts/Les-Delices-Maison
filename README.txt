@@ -1,3 +1,5 @@
+![](./screenshot.png)
+
 ## [ENGLISH VERSION]
 
 ### 🎯 Learning Goals
@@ -54,7 +56,3 @@ Ce projet a été développé pour :
 - **Mise en page modulaire :** En-tête, pied de page et navigation structurés avec des includes PHP.
 
 - **Design responsive :** S’adapte à différentes tailles d’écran grâce à SCSS et aux media queries.
-
-### Screenshot
-
-![](./screenshot.png)
